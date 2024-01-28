@@ -1,69 +1,3 @@
-//When they view the browser console, they observe a table listing how many
-// of each flavor they have ordered.
-
-// nouns: items in the order
-// an object of the items
-
-//verbs: create an object with all the items in the order
-//count the items in the order and records them.
-
-//an empty object to hold all the items
-//for each string in the order
-//add item to the object
-//record the number of items
-//return the items in the object and the amount of items
-
-//@param {string[]} items in the order
-//@returns object and number of items
-
-//const myCounter = (strings) => {};
-
-//const flavorTally = myCounter(userOrder);
-//console.table(flavorTally);
-
-// Otherwise you _have_ to use bracket notation with a variable key
-
-//function will be a 'for' 'of' statement
-
-// weather[key] -> weather["temperature"] -> this works
-// this is adding the kep temp to the weather object
-
-// Iterate, this would be the start of out function....
-//for (const key in weather) {
-
-//this function returns the total cost of the items in dinner
-
-//function calculateCost(meal){
-//let total = 0;
-//for (const food in meal){
-//total += meal[food];
-//}
-//return total;
-//}
-
-//this adds the values of dinner to calculate the total cost..
-//function calculateCost(meal){
-//let total = 0;
-//for (const food in meal){
-//total += meal[food];
-//}
-//return total;
-//}
-
-//basic loop iteration
-
-//let j = 0;
-//while (j < 5) {
-//console.log(j);
-
-//j += 1;
-//}
-
-//const myCounter = (strings) => {};
-
-//const flavorTally = myCounter(userOrder);
-//console.table(flavorTally);
-
 //prompt the customer for their order:
 const userInput = prompt(
   "Please enter some integers separated by commas.",
@@ -78,7 +12,29 @@ console.log(flavors);
 //table objects in a nice interface:
 //console.table();
 
-const myCounter = (strings) => {
+/*nouns:	  items in order
+            an object of items
+verbs:	create an object with all the items in the order
+		    count the items in the order and record them
+
+An empty object
+Loop
+Count
+Return object with items and count
+
+Variable = an empty object
+For each string in the order
+Add that string to the object
+Record the number of strings?
+(Accumulate based on the name of the string)
+Return the object with the strings and their amount.
+
+Const orderCount = {}
+For (str in strings){
+	orderCount += 1;
+	}*/
+
+/*const myCounter = (strings) => {
   const orderCount = {};
   for (const str of strings) {
     if (str in orderCount) {
@@ -89,6 +45,26 @@ const myCounter = (strings) => {
     return orderCount;
   }
 };
+*/
+const myCounter = (strings) => {
+  const orderCount = {};
+  // define varibale = to an empty object i = 0
+  for (const str of strings) {
+    // loop through each string of the strings in the array
+    if (str in orderCount) {
+      // loop through each string in the array til done i < orderCount
+      orderCount[str] += 1;
+      // for each multiple string in orderCount add 1 to that string in the count
+    } else {
+      // else string = 1 in the count
+      orderCount[str] = 1;
+    }
+  }
+  // retrun the count
+  return orderCount;
+};
 
-const flavorFrequencies = myCounter(flavors);
-console.table(flavorFrequencies);
+// create a variable = to myCounter variable taking in the parameter of flavors in the array
+const flavorTally = myCounter(flavors);
+//print the varibale in the form of a table
+console.table(flavorTally);
